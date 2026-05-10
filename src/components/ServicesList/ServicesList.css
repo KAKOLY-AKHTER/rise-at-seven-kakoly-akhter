@@ -160,11 +160,18 @@
   position: relative;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.08);
-  margin-right: 14px;
+  margin-right: 8px;
   border-radius: 15%;
-  width: 90px;
+  width: 60px;
   height: auto;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .sh-img-wrap {
+    width: 90px;
+    margin-right: 14px;
+  }
 }
 
 @media (pointer: fine) {

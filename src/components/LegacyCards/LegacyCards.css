@@ -4,6 +4,15 @@
   position: relative;
   background: #f4f3ef;
   font-family: 'saans', system-ui, sans-serif;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+@media (min-width: 1024px) {
+  .legacy-section {
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+  }
 }
 
 .legacy-heading-wrap {

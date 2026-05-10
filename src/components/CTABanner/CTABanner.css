@@ -1,0 +1,44 @@
+.cta-outer {
+  overflow: hidden;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .cta-outer {
+    display: block;
+  }
+}
+
+.cta-trigger {
+  display: flex;
+  height: 35vh;
+}
+
+@media (min-width: 1024px) {
+  .cta-trigger {
+    height: 100vh;
+  }
+}
+
+.cta-heading {
+  flex-shrink: 0;
+  font-size: 30vw;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+  color: #111212;
+  white-space: nowrap;
+  font-family: 'saans', system-ui, sans-serif;
+}
+
+@media (min-width: 1024px) {
+  .cta-heading {
+    font-size: 16vw;
+  }
+}
+
+@media (min-width: 1600px) {
+  .cta-heading {
+    font-size: 14vw;
+  }
+}

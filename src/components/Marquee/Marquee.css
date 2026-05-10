@@ -1,0 +1,128 @@
+.marquee-section {
+  width: 100%;
+  overflow: hidden;
+  font-family: 'saans', system-ui, sans-serif;
+  padding: 0;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  will-change: transform;
+}
+
+.marquee-group-wrap {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 8px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .marquee-group {
+    gap: 40px;
+    padding: 40px 20px;
+  }
+}
+
+.marquee-title-wrap {
+  display: flex;
+  flex: 1;
+  text-decoration: none;
+  cursor: none;
+}
+
+.marquee-title {
+  display: inline-flex;
+  flex-wrap: wrap;
+  text-align: left;
+  justify-content: flex-start;
+  color: #111212;
+  font-size: 5.5rem;
+  line-height: 0.9;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  margin: 0;
+  flex: 1;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .marquee-title {
+    font-size: 8rem;
+    line-height: 0.9;
+  }
+}
+
+@media (min-width: 1280px) {
+  .marquee-title {
+    font-size: 16rem;
+    line-height: 0.9;
+  }
+}
+
+.marquee-cursor {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: #b2f6e3;
+  color: #111212;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 12px 24px;
+  border-radius: 100px;
+  border: none;
+  font-family: 'saans', system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.marquee-img-wrap {
+  flex-shrink: 0;
+  width: 20vw;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .marquee-img-wrap {
+    width: 15vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .marquee-img-wrap {
+    width: 12vw;
+    border-radius: 24px;
+    margin-top: 2.5vw; /* Push down to visually center with text */
+  }
+}
+
+.marquee-img-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.marquee-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

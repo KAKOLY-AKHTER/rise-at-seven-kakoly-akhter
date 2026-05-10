@@ -1,0 +1,63 @@
+.nl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nl-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.nl-row {
+  display: flex;
+  gap: 8px;
+}
+
+.nl-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.nl-input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.nl-input:focus {
+  border-color: rgba(255,255,255,0.5);
+}
+
+.nl-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  color: #111212;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.nl-btn:hover {
+  opacity: 0.85;
+}
+
+.nl-success {
+  padding: 12px 0;
+}
+
+.nl-success p {
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+}

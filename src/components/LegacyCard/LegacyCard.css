@@ -1,0 +1,133 @@
+.legacy-card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 16px;
+  padding: 28px;
+  font-family: 'saans', system-ui, sans-serif;
+}
+
+@media (min-width: 1024px) {
+  .legacy-card-content {
+    align-items: center;
+    border-radius: 24px;
+    aspect-ratio: 1 / 1;
+    padding: 40px 56px;
+  }
+}
+
+.lc-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .lc-grid {
+    gap: 20px;
+  }
+}
+
+.lc-image-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .lc-image-wrap {
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    width: 192px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .lc-image-wrap {
+    width: 224px;
+  }
+}
+
+.lc-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lc-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.lc-title {
+  display: inline-flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  font-size: 1.875rem;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  margin: 0;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .lc-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lc-title {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1600px) {
+  .lc-title {
+    font-size: 4.5rem;
+    line-height: 0.9;
+  }
+}
+
+.lc-desc-wrap {
+  width: 100%;
+}
+
+.lc-desc {
+  font-size: 0.875rem;
+  font-family: 'saans', system-ui, sans-serif;
+  line-height: 1.5;
+  text-wrap: pretty;
+  margin: 0 0 20px;
+}
+
+.lc-desc:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .lc-desc {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .lc-desc:last-child {
+    margin-bottom: 0;
+  }
+}

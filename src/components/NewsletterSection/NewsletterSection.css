@@ -1,0 +1,50 @@
+.nl-wrapper {
+  position: relative;
+  height: 300vh; /* Scroll distance */
+  background-color: #f1f1ee;
+}
+
+.nl-section {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  overflow: hidden;
+  padding-left: 5vw;
+  z-index: 10;
+  background-color: #f1f1ee;
+}
+
+@media (max-width: 1024px) {
+  .nl-wrapper {
+    height: 150vh;
+  }
+  .nl-section {
+    height: 50vh;
+  }
+}
+
+.nl-heading {
+  display: flex;
+  font-size: 30vw;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: #000000;
+  user-select: none;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .nl-heading {
+    font-size: 16vw;
+  }
+}
+
+.nl-char {
+  display: inline-block;
+  will-change: transform, opacity;
+  position: relative;
+}

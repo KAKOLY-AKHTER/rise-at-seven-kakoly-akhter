@@ -1,0 +1,25 @@
+.cursor-follow {
+  position: fixed;
+  top: -48px;
+  left: -48px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #b2f6e3;
+  color: #111212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate(0, 0) scale(0.5);
+  transition: opacity 0.25s ease, transform 0.1s linear;
+  will-change: transform;
+  font-size: 28px;
+}
+
+.cursor-follow.cursor-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}

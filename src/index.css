@@ -1,51 +1,36 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@import "tailwindcss";
+
+@theme {
+  --font-saans: "Saans", sans-serif;
 }
 
-:root {
-  font-family: 'saans', system-ui, -apple-system, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #111212;
-  background: #f4f3ef;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-family: "Saans", ui-sans-serif, system-ui, sans-serif;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: #f4f3ef;
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-#root {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  text-align: left;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  border: none;
+.hide-scrollbar {
+  scrollbar-width: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-img {
-  max-width: 100%;
-  display: block;
+.logo-marquee-track {
+  animation: logo-marquee 18s linear infinite;
 }
 
-@media (max-width: 1024px) {
-  :root {
-    font-size: 15px;
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track {
+    animation: none;
   }
 }

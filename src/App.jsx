@@ -1,4 +1,4 @@
-import AnnouncementBar from './components/Announcement'
+
 import Hero from './components/Hero'
 import HeroServiceSection from './components/Hero/HeroServiceSection'
 import ServicesList from './components/ServicesList'
@@ -10,12 +10,13 @@ import CTABanner from './components/CTABanner'
 import Footer from './components/Footer'
 import Cursor from './components/Cursor'
 import './App.css'
+import AnnouncementBar from './components/AnnouncementBar/AnnouncementBar'
 
 function App() {
   return (
     <>
       <Cursor />
-      <AnnouncementBar />
+ <AnnouncementBar></AnnouncementBar>
       <Hero />
         <Marquee />
     

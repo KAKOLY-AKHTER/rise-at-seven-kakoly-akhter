@@ -1,76 +1,55 @@
-import { useState } from 'react'
-import './Navbar.css'
+import { useState } from 'react';
 
-const navLinks = [
-  { label: 'Services', href: '/services', mega: true },
-  { label: 'Work', href: '/work' },
-  { label: 'About', href: '/about' },
-  { label: 'Insights', href: '/insights' },
-  { label: 'Careers', href: '/careers' },
-]
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
 
-const serviceItems = [
-  { title: 'Digital PR', desc: 'Earned media & link building at scale' },
-  { title: 'Search & Growth Strategy', desc: 'Data-driven SEO & growth roadmaps' },
-  { title: 'Data & Insights', desc: 'Powerful analytics & actionable reporting' },
-  { title: 'Organic Social & Content', desc: 'Platform-native content that converts' },
-  { title: 'Content Experience', desc: 'Immersive digital experiences & CRO' },
-  { title: 'Onsite SEO', desc: 'Technical SEO & site architecture' },
-]
+    return (
+        <nav className="fixed w-full z-50 bg-white border-b border-gray-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between h-20 items-center">
+                    {/* Logo - অরিজিনাল সাইট থেকে লোগোটি এখানে বসান */}
+                    <div className="flex-shrink-0 flex items-center">
+                        <h1 className="text-2xl font-bold">Rise at Seven</h1>
+                    </div>
 
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [megaOpen, setMegaOpen] = useState(false)
+                    {/* Desktop Menu - বড় স্ক্রিনের জন্য */}
+                    <div className="hidden md:flex space-x-8 items-center">
+                        <a href="#" className="text-gray-900 hover:text-black font-medium">Services</a>
+                        <a href="#" className="text-gray-900 hover:text-black font-medium">Work</a>
+                        <a href="#" className="text-gray-900 hover:text-black font-medium">About</a>
+                        <button className="bg-black text-white px-6 py-2 rounded-full">Get in touch</button>
+                    </div>
 
-  return (
-    <nav className="navbar">
-      <div className="navbar-inner">
-        <a href="/" className="navbar-logo">
-          <svg viewBox="0 0 120 24" className="logo-svg" aria-label="Rise at Seven">
-            <text x="0" y="20" fontSize="20" fontWeight="700" fill="#111212">Rise at Seven</text>
-          </svg>
-        </a>
-
-        <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-          {navLinks.map((link) => (
-            <div
-              key={link.label}
-              className={`nav-item ${link.mega ? 'has-mega' : ''}`}
-              onMouseEnter={() => link.mega && setMegaOpen(true)}
-              onMouseLeave={() => link.mega && setMegaOpen(false)}
-            >
-              <a href={link.href} className="nav-link">
-                {link.label}
-                {link.mega && <span className="nav-chevron">▾</span>}
-              </a>
-              {link.mega && megaOpen && (
-                <div className="mega-menu">
-                  <div className="mega-grid">
-                    {serviceItems.map((s) => (
-                      <a key={s.title} href="/services" className="mega-item">
-                        <span className="mega-title">{s.title}</span>
-                        <span className="mega-desc">{s.desc}</span>
-                      </a>
-                    ))}
-                  </div>
+                    {/* Mobile Button - হ্যামবার্গার মেনু বাটন */}
+                    <div className="md:hidden flex items-center">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="text-gray-900 focus:outline-none"
+                        >
+                            {/* হ্যামবার্গার আইকন */}
+                            <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                {isOpen ? (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                ) : (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                )}
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-              )}
             </div>
-          ))}
-          <a href="/contact" className="nav-cta-mobile">Work With Us</a>
-        </div>
 
-        <a href="/contact" className="nav-cta">Work With Us</a>
+            {/* Mobile Menu Overlay - এটি আপনার টাস্কের প্রধান অংশ */}
+            {isOpen && (
+                <div className="md:hidden bg-white h-screen absolute top-0 left-0 w-full z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+                    {/* ক্লোজ বাটন এবং মেনু আইটেমগুলো এখানে হবে */}
+                    <a href="#" onClick={() => setIsOpen(false)}>Services</a>
+                    <a href="#" onClick={() => setIsOpen(false)}>Work</a>
+                    <a href="#" onClick={() => setIsOpen(false)}>About</a>
+                </div>
+            )}
+        </nav>
+    );
+};
 
-        <button
-          className={`hamburger ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span /><span /><span />
-        </button>
-      </div>
-      {menuOpen && <div className="nav-overlay" onClick={() => setMenuOpen(false)} />}
-    </nav>
-  )
-}
+export default Navbar;

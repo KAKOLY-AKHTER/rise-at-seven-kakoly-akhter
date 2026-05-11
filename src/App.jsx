@@ -1,5 +1,6 @@
-import Navbar from './components/Navbar'
+import AnnouncementBar from './components/Announcement'
 import Hero from './components/Hero'
+import HeroServiceSection from './components/Hero/HeroServiceSection'
 import ServicesList from './components/ServicesList'
 import FeaturedWork from './components/FeaturedWork'
 import Marquee from './components/Marquee'
@@ -14,14 +15,16 @@ function App() {
   return (
     <>
       <Cursor />
-      <Navbar />
-      <main className="main-content">
-        <Hero />
-     
-        <FeaturedWork />
-
-           <ServicesList />
+      <AnnouncementBar />
+      <Hero />
         <Marquee />
+    
+      <HeroServiceSection />
+          
+      <main className="main-content">
+        <FeaturedWork />
+        <ServicesList />
+      
         <LegacyCards />
         <BlogCards />
       </main>

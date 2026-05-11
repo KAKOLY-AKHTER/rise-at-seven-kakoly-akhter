@@ -1,78 +1,202 @@
-.featured-work {
+.fw {
   width: 100%;
-  padding: 80px 28px;
-  background: #f4f3ef;
-  font-family: 'saans', system-ui, sans-serif;
-  box-sizing: border-box;
-  position: relative;
+  background: #111212;
+  padding: 80px 28px 80px;
+  font-family: 'saans', 'DM Sans', system-ui, sans-serif;
 }
 
-.fw-sticky {
+.fw__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.fw__left {
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding-right: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #333 #1c1c1c;
+}
+
+/* Scrollbar Styling */
+.fw__left::-webkit-scrollbar {
+  width: 6px;
+}
+.fw__left::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+.fw__left::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.fw__header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 40px;
+  position: sticky;
+  top: 0;
+  background: #111212;
+  z-index: 10;
+  padding-bottom: 20px;
 }
 
-.fw-header {
-  display: flex;
-  align-items: center;
-}
-
-.fw-heading {
-  margin: 0;
+.fw__title {
   font-size: clamp(44px, 6.5vw, 80px);
   font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 0.92;
-  color: #111212;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: #fff;
+  margin: 0;
+}
+
+.fw__counter {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.fw__counter-current { color: #fff; }
+.fw__counter-sep, .fw__counter-total { color: #3a3a3a; }
+
+/* Projects List */
+.fw__projects {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.fw__project {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #222;
+}
+
+.fw__project:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fw__project:hover,
+.fw__project.active {
+  opacity: 1;
+}
+
+.fw__project:not(.active) {
+  opacity: 0.55;
+}
+
+.fw__project-main {
+  display: flex;
+  align-items: baseline;
   gap: 12px;
+  margin-bottom: 10px;
 }
 
-.fw-heading-img {
-  display: inline-flex;
-  width: clamp(40px, 5vw, 70px);
-  height: clamp(40px, 5vw, 70px);
-  border-radius: 10px;
+.fw__client {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.fw__year {
+  font-size: 18px;
+  color: #777;
+}
+
+.fw__headline {
+  font-size: 18px;
+  line-height: 1.35;
+  color: #ccc;
+  margin: 0;
+}
+
+/* Right Side Image */
+.fw__right {
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.fw__image-wrapper {
+  position: relative;
+  border-radius: 24px;
   overflow: hidden;
-  flex-shrink: 0;
+  aspect-ratio: 4 / 3.1;
+  background: #1a1a1a;
 }
 
-.fw-heading-img img {
+.fw__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.fw-counter {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+.fw__project:hover ~ .fw__right .fw__image,
+.fw__image-wrapper:hover .fw__image {
+  transform: scale(1.06);
+}
+
+.fw__pill {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 50px;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+/* CTA */
+.fw__cta {
+  margin-top: 50px;
+}
+
+.fw__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
   color: #111212;
+  border-radius: 100px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
 }
 
-.fw-divider-dot {
-  color: #d3d1c7;
-  font-weight: 300;
+.fw__cta-btn:hover {
+  border-radius: 12px;
 }
 
-.fw-total {
-  color: #d3d1c7;
-}
-
-.fw-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 768px) {
-  .fw-cards {
+/* Responsive */
+@media (max-width: 1024px) {
+  .fw__container {
     grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .fw__left {
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+  .fw__right {
+    position: relative;
+    top: 0;
   }
 }

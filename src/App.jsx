@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import Cursor from './components/Cursor'
 import './App.css'
 import AnnouncementBar from './components/AnnouncementBar/AnnouncementBar'
+import LogoMarquee from './components/Logomarquee/Logomarquee'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Cursor />
  <AnnouncementBar></AnnouncementBar>
       <Hero />
+      <LogoMarquee></LogoMarquee>
         <Marquee />
     
       <HeroServiceSection />

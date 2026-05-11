@@ -20,48 +20,62 @@ const Hero = () => {
     };
 
     const menuDetails = {
+        // Folder 3 — Services+ (8 images)
         'Services+': {
             width: '1050px', height: '320px',
             items: [
-                { name: 'Search & Growth Strategy', img: '/3/Screenshot-2025-06-23-at-23.14.49.png' },
-                { name: 'Onsite SEO', img: '/3/WhatsApp-Image-2025-06-03-at-08.34.50.jpeg' },
-                { name: 'Content Experience', img: '/3/Screenshot-2025-06-23-at-23.16.14.png' },
-                { name: 'B2B Marketing', img: '/3/0B5A6875.jpg' },
-                { name: 'Digital PR', img: '/3/Screenshot-2025-06-23-at-22.39.35.png' },
-                { name: 'Social Media & Campaigns', img: '/3/temp_image_43CEDE6C-4430-479F-9DBF-B348FA9AC991.WEBP' },
-                { name: 'Data & Insights', img: '/3/data.jpg' },
-                { name: 'Social SEO/Search', img: '/3/Screenshot-2025-09-24-at-11.47.25.png' }
+                { name: 'Search & Growth Strategy',  img: '/images/3/Screenshot-2025-06-23-at-23.14.49.png' },
+                { name: 'Onsite SEO',                img: '/images/3/WhatsApp-Image-2025-06-03-at-08.34.50.jpeg' },
+                { name: 'Content Experience',        img: '/images/3/Screenshot-2025-06-23-at-23.16.14.png' },
+                { name: 'B2B Marketing',             img: '/images/3/0B5A6875.jpg' },
+                { name: 'Digital PR',                img: '/images/3/Screenshot-2025-06-23-at-22.39.35.png' },
+                { name: 'Social Media & Campaigns',  img: '/images/3/temp_image_43CEDE6C-4430-479F-9DBF-B348FA9AC991.WEBP' },
+                { name: 'Data & Insights',           img: '/images/3/data.jpg' },
+                { name: 'Social SEO/Search',         img: '/images/3/Screenshot-2025-09-24-at-11.47.25.png' }
             ],
             showViewAll: true
         },
+
+        // Folder 6 — Industries+ (4 images: 01–04)
         'Industries+': {
             width: '570px', height: '288px',
-            items: [{ name: 'B2B Marketing', img: '/3/0B5A68757.webp' }]
+            items: [
+                { name: 'B2B Marketing',   img: '/images/3/0B5A68757.webp' },
+                { name: 'eCommerce',       img: '/images/6/02.png' },
+                { name: 'Finance',         img: '/images/6/03.webp' },
+                { name: 'Technology',      img: '/images/6/04.png' }
+            ]
         },
+
+        // Folder 4 — International+ (4 images)
         'international+': {
             width: '664px', height: '300px',
             items: [
-                { name: "US Digital PR", img: '/4/d4df0d30-d590-4e94-9056-9491f4beacba.JPG' },
-                { name: "Spain Digital PR", img: '/4/002.jpg' },
-                { name: "Germany Digital PR", img: '/4/003.jpg' },
-                { name: "Netherlands Digital PR", img: '/4/003.webp' }
+                { name: 'US Digital PR',          img: '/images/4/d4df0d30-d590-4e94-9056-9491f4beacba.JPG' },
+                { name: 'Spain Digital PR',       img: '/images/4/002.jpg' },
+                { name: 'Germany Digital PR',     img: '/images/4/003.jpg' },
+                { name: 'Netherlands Digital PR', img: '/images/4/003.webp' }
             ]
         },
+
+        // Folder 5 — About+ (3 images; 4th reuses folder-4 hero)
         'About+': {
             width: '585px', height: '288px',
             items: [
-                { name: "About Us", img: '/5/1.jpg' },
-                { name: "Meet The Risers", img: '/5/2.png' },
-                { name: "Culture", img: '/5/3.jpg' },
-                { name: "Testimonials", img: '/4/d4df0d30-d590-4e94-9056-9491f4beacba.JPG' }
+                { name: 'About Us',         img: '/images/5/1.jpg' },
+                { name: 'Meet The Risers', img: '/images/5/2.png' },
+                { name: 'Culture',          img: '/images/5/3.jpg' },
+                { name: 'Testimonials',     img: '/images/4/d4df0d30-d590-4e94-9056-9491f4beacba.JPG' }
             ]
         },
+
+        // Folder 7 — Blog & Resources+ (10 images; using first 3)
         'Blog & Resources+': {
             width: '752px', height: '288px',
             items: [
-                { name: "Blog", img: '/blog/1.jpg' },
-                { name: "Category Leaderboard", img: '/blog/2.jpg' },
-                { name: "Multi-Channel Search Report", img: '/blog/3.jpg' }
+                { name: 'Blog',                      img: '/images/7/001.jpg' },
+                { name: 'Category Leaderboard',      img: '/images/7/002.jpg' },
+                { name: 'Multi-Channel Search Report', img: '/images/7/003.png' }
             ]
         },
     };
@@ -74,10 +88,10 @@ const Hero = () => {
     };
 
     const heroData = [
-        { bg: "/RedBull-Instagram-Post-45.png", smallImg: "/RedBull-Instagram-Post-45.png" },
-        { bg: "/pokkey.jpg", smallImg: "/pokkey.jpg" },
-        { bg: "/Emirates-airpline-in-flight.avif", smallImg: "/Emirates-airpline-in-flight.avif" },
-        { bg: "/Screenshot-2025-07-01-at-21.36.35.png", smallImg: "/Screenshot-2025-07-01-at-21.36.35.png" }
+        { bg: "/RedBull-Instagram-Post-45.png",          smallImg: "/RedBull-Instagram-Post-45.png" },
+        { bg: "/pokkey.jpg",                              smallImg: "/pokkey.jpg" },
+        { bg: "/Emirates-airpline-in-flight.avif",        smallImg: "/Emirates-airpline-in-flight.avif" },
+        { bg: "/Screenshot-2025-07-01-at-21.36.35.png",  smallImg: "/Screenshot-2025-07-01-at-21.36.35.png" }
     ];
 
     const [activeHero, setActiveHero] = useState(heroData[0]);
@@ -87,9 +101,9 @@ const Hero = () => {
         setActiveHero(heroData[randomIndex]);
     }, []);
 
-    const isMegaMenu = ['Services+', 'Industries+', 'international+', 'About+', 'Blog & Resources+'].includes(activeMenu);
-    const navItems = ['Services+', 'Industries+', 'international+', 'About+', 'Work', 'Careers', 'Blog & Resources+', 'Webinar'];
-    const isSquareImg = ['Industries+', 'international+', 'About+', 'Blog & Resources+'].includes(activeMenu);
+    const isMegaMenu   = ['Services+', 'Industries+', 'international+', 'About+', 'Blog & Resources+'].includes(activeMenu);
+    const navItems     = ['Services+', 'Industries+', 'international+', 'About+', 'Work', 'Careers', 'Blog & Resources+', 'Webinar'];
+    const isSquareImg  = ['Industries+', 'international+', 'About+', 'Blog & Resources+'].includes(activeMenu);
 
     return (
         <section className="hero-section">
@@ -238,9 +252,9 @@ const Hero = () => {
                         </p>
                         <div className="hero-content__awards">
                             <img src="/global-search-awards.png" className="hero-content__award-img" alt="Award 1" />
-                            <img src="/public/Mask-group.png" className="hero-content__award-img" alt="Award 2" />
+                            <img src="/public/Mask-group.png"   className="hero-content__award-img" alt="Award 2" />
                             <img src="/UKSocial-Media-Awards-White.png" className="hero-content__award-img" alt="Award 3" />
-                            <img src="/UK-Content-Awards-White.png" className="hero-content__award-img" alt="Award 4" />
+                            <img src="/UK-Content-Awards-White.png"     className="hero-content__award-img" alt="Award 4" />
                         </div>
                     </div>
 

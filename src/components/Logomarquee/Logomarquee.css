@@ -2,12 +2,12 @@
 
 .logo-marquee-section {
   width: 100%;
-  margin-top: 0;
+  margin-top: 40px;
 }
 
 @media (min-width: 1280px) {
   .logo-marquee-section {
-    margin-top: 3rem;
+    margin-top: 60px;
   }
 }
 

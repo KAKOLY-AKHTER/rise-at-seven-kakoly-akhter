@@ -1,7 +1,7 @@
 .blog-section {
   width: 100%;
   max-width: 1700px;
-  margin: 0 auto 120px auto;
+  margin: 0 auto 80px auto;
   background: #efeeec;
   font-family: 'saans', system-ui, sans-serif;
   padding: 0 24px;
@@ -10,7 +10,7 @@
 @media (min-width: 1024px) {
   .blog-section {
     padding: 0 64px;
-    margin-bottom: 160px;
+    margin-bottom: 120px;
   }
 }
 

@@ -4,6 +4,13 @@
   font-family: 'saans', system-ui, sans-serif;
   padding: 0;
   position: relative;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 1024px) {
+  .marquee-section {
+    margin-bottom: 120px;
+  }
 }
 
 .marquee-track {

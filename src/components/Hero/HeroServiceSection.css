@@ -2,17 +2,17 @@
 
 .hs {
   width: 100%;
-  padding: 5px 16px;
+  padding: 80px 16px;
   box-sizing: border-box;
   font-family: 'saans', system-ui, sans-serif;
 }
 
 @media (min-width: 768px) {
-  .hs { padding: 20px 28px; }
+  .hs { padding: 100px 28px; }
 }
 
 @media (min-width: 1280px) {
-  .hs { padding: 40px 28px; }
+  .hs { padding: 120px 28px; }
 }
 
 /* ── Inner wrapper ─────────────────────────────────────────── */

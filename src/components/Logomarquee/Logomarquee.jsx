@@ -1,5 +1,5 @@
 import React from "react";
-import "./LogoMarquee.css";
+import "./Logomarquee.css";
 
 // ✅ img এবং svg দুটোই support করে
 const logos = [
@@ -49,8 +49,10 @@ export default function LogoMarquee() {
   return (
     <section className="logo-marquee-section">
       <div className="logo-marquee-container">
+        <p className="logo-marquee-label-mobile">The agency behind....</p>
+
         <div className="logo-marquee-row">
-          <p className="logo-marquee-label">
+          <p className="logo-marquee-label-desktop">
             The agency behind
           </p>
 
@@ -78,7 +80,7 @@ export default function LogoMarquee() {
                       />
                     ) : (
                       <div
-                        className="logo-marquee-svg-wrapper"
+                        className="logo-marquee-svg-wrapper text-[#222]"
                         dangerouslySetInnerHTML={{ __html: logo.svg }}
                       />
                     )}

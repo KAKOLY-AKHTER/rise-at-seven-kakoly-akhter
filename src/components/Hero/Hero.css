@@ -137,13 +137,13 @@
     margin: 0 auto;
     width: calc(100% - 24px);
     max-width: 1700px;
-    height: 48px; /* Thinner height */
+    height: 42px; /* Even thinner height */
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 9999px;
-    padding: 0 12px;
+    padding: 0 9px; /* Increased by 1px */
     color: #000;
     left: 50%;
     transform: translateX(-50%);
@@ -154,10 +154,12 @@
 @media (min-width: 1024px) {
     .hero-header--scrolled {
         top: 15px; /* Slightly closer to top */
-        height: 54px; /* Thinner for desktop */
-        padding: 0 16px;
+        height: 48px; /* Even thinner for desktop */
+        padding: 0 13px; /* Increased by 1px */
     }
 }
+
+
 
 
 /* Visibility States */

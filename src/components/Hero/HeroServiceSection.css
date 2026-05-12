@@ -261,11 +261,37 @@
   color: inherit;
 }
 
+.hs__btn-inner {
+  position: relative;
+  height: 1.25em;        /* matches line-height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
 .hs__btn-label {
   display: flex;
   align-items: center;
   gap: 6px;
   white-space: nowrap;
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hs__btn-label--clone {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.hs__btn:hover .hs__btn-label:first-child,
+.hs__btn-mobile:hover .hs__btn-label:first-child {
+  transform: translateY(-100%);
+}
+
+.hs__btn:hover .hs__btn-label--clone,
+.hs__btn-mobile:hover .hs__btn-label--clone {
+  transform: translateY(-100%);
 }
 
 /* ── Mobile buttons (shown above heading on mobile) ──────── */

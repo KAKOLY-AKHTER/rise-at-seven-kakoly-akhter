@@ -583,6 +583,28 @@
     }
 }
 
+
+
+.hero-content__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Make sure awards are visible */
+.hero-content__awards-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.hero-content__award-logo {
+    width: 52px;
+    height: auto;
+    object-fit: contain;
+}
 .hero-content__inline-img-wrap {
     display: inline-flex;
     margin: 0 16px;
@@ -632,8 +654,9 @@
     justify-content: center;
     align-items: center;
     gap: 56px; /* gap-x-14 */
-    margin-top: 48px;
+    margin-top: 28px;
     width: 100%;
+    
 }
 
 @media (min-width: 1536px) {
@@ -643,7 +666,7 @@
 }
 
 .hero-content__platform-img {
-    width: 64px; /* w-16 */
+    width: 74px; /* w-16 */
     height: auto;
     aspect-ratio: 20/9;
     object-fit: contain;

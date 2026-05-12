@@ -18,10 +18,16 @@ const HeroServiceSection = () => {
           {/* Mobile-only buttons — col-reverse makes these appear at top on mobile */}
           <div className="hs__btns-mobile">
             <a href="/about/" className="hs__btn-mobile hs__btn-mobile--filled">
-              Our Story ↗
+              <div className="hs__btn-inner">
+                <span className="hs__btn-label">Our Story ↗</span>
+                <span className="hs__btn-label hs__btn-label--clone" aria-hidden="true">Our Story ↗</span>
+              </div>
             </a>
             <a href="/services/" className="hs__btn-mobile hs__btn-mobile--ghost">
-              Our Services ↗
+              <div className="hs__btn-inner">
+                <span className="hs__btn-label">Our Services ↗</span>
+                <span className="hs__btn-label hs__btn-label--clone" aria-hidden="true">Our Services ↗</span>
+              </div>
             </a>
           </div>
 
@@ -58,15 +64,17 @@ const HeroServiceSection = () => {
             <div className="hs__btns">
 
               <a href="/about/" className="hs__btn hs__btn--filled">
-                <span className="hs__btn-label">
-                  Our Story ↗
-                </span>
+                <div className="hs__btn-inner">
+                  <span className="hs__btn-label">Our Story ↗</span>
+                  <span className="hs__btn-label hs__btn-label--clone" aria-hidden="true">Our Story ↗</span>
+                </div>
               </a>
 
               <a href="/services/" className="hs__btn hs__btn--ghost">
-                <span className="hs__btn-label">
-                  Our Services ↗
-                </span>
+                <div className="hs__btn-inner">
+                  <span className="hs__btn-label">Our Services ↗</span>
+                  <span className="hs__btn-label hs__btn-label--clone" aria-hidden="true">Our Services ↗</span>
+                </div>
               </a>
 
             </div>

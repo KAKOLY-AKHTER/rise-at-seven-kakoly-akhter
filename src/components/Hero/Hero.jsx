@@ -19,6 +19,18 @@ const Hero = () => {
         });
     };
 
+
+    const [scrolled, setScrolled] = useState(false);
+
+useEffect(() => {
+    const el = document.querySelector('.hero-container'); // বা window
+    const handleScroll = () => {
+        setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
     const menuDetails = {
         // Folder 3 — Services+ (8 images)
         'Services+': {
@@ -41,9 +53,9 @@ const Hero = () => {
             width: '570px', height: '288px',
             items: [
                 { name: 'B2B Marketing',   img: '/images/3/0B5A68757.webp' },
-                { name: 'eCommerce',       img: '/images/6/02.png' },
-                { name: 'Finance',         img: '/images/6/03.webp' },
-                { name: 'Technology',      img: '/images/6/04.png' }
+                // { name: 'eCommerce',       img: '/images/6/02.png' },
+                // { name: 'Finance',         img: '/images/6/03.webp' },
+                // { name: 'Technology',      img: '/images/6/04.png' }
             ]
         },
 
@@ -129,7 +141,7 @@ const Hero = () => {
                 {/* Header / Nav */}
                 <header
                     onMouseLeave={() => { setActiveMenu(null); setHoverRect(prev => ({ ...prev, opacity: 0 })); }}
-                    className="hero-header"
+    className={`hero-header ${scrolled ? 'hero-header--scrolled' : ''}`}
                 >
                     {/* Logo */}
                     <div className="hero-logo">

@@ -30,13 +30,7 @@
 /* ---- Header ---- */
 .blog-header-col {
   grid-column: span 12;
-  padding: 0 16px;
-}
-
-@media (min-width: 768px) {
-  .blog-header-col {
-    padding: 0 28px;
-  }
+  padding: 0;
 }
 
 .blog-header-grid {
@@ -54,7 +48,7 @@
 }
 
 .blog-heading-cell {
-  grid-column: span 11;
+  grid-column: span 12;
   display: flex;
   align-items: flex-end;
 }
@@ -69,7 +63,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   color: #111212;
-  font-size: 3.75rem;
+  font-size: clamp(2.5rem, 10vw, 3.75rem);
   line-height: 0.9;
   font-weight: 500;
   letter-spacing: -0.035em;
@@ -80,13 +74,6 @@
 }
 
 @media (min-width: 768px) {
-  .blog-heading {
-    font-size: 4.5rem;
-    line-height: 1;
-  }
-}
-
-@media (min-width: 1024px) {
   .blog-heading {
     font-size: 4.5rem;
     line-height: 1;
@@ -110,7 +97,7 @@
   position: relative;
   text-align: left;
   justify-content: flex-start;
-  overflow: hidden;
+  align-items: center;
 }
 
 .blog-word {
@@ -139,9 +126,15 @@
   overflow: hidden;
   background: rgba(0,0,0,0.05);
   border-radius: 15%;
-  width: 90px;
+  width: 60px;
   height: auto;
   margin-right: 14px;
+}
+
+@media (min-width: 768px) {
+  .blog-heading-img {
+    width: 90px;
+  }
 }
 
 .blog-heading-img-el {
@@ -233,12 +226,7 @@
 /* ---- Carousel ---- */
 .blog-carousel-col {
   grid-column: span 12;
-}
-
-@media (min-width: 1024px) {
-  .blog-carousel-col {
-    padding: 0 28px;
-  }
+  padding: 0;
 }
 
 .blog-carousel {
@@ -256,12 +244,6 @@
   position: relative;
   padding: 12px 0;
   margin-top: 20px;
-}
-
-@media (min-width: 768px) {
-  .blog-progress-wrap {
-    padding: 12px 28px;
-  }
 }
 
 .blog-progressbar {
@@ -283,7 +265,8 @@
 /* ---- Mobile CTA ---- */
 .blog-cta-mobile-col {
   grid-column: span 12;
-  padding: 0 16px;
+  padding: 0;
+  margin-top: 24px;
 }
 
 @media (min-width: 768px) {

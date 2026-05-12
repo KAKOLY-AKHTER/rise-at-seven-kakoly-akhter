@@ -22,11 +22,11 @@ function App() {
       <Hero />
       <LogoMarquee></LogoMarquee>
       <HeroServiceSection />
-        <Marquee />
+ 
       <main className="main-content">
         <FeaturedWork />
         <ServicesList />
-      
+             <Marquee />
         <LegacyCards />
         <BlogCards />
       </main>

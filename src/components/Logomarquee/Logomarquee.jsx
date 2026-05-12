@@ -49,10 +49,8 @@ export default function LogoMarquee() {
   return (
     <section className="logo-marquee-section">
       <div className="logo-marquee-container">
-        <p className="logo-marquee-label-mobile">The agency behind....</p>
-
         <div className="logo-marquee-row">
-          <p className="logo-marquee-label-desktop">
+          <p className="logo-marquee-label">
             The agency behind
           </p>
 

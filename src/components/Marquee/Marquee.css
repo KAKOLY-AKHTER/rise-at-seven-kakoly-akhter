@@ -105,7 +105,7 @@
 @media (min-width: 1024px) {
   .marquee-img-wrap {
     width: 12vw;
-    border-radius: 24px;
+    border-radius: 48px;
     margin-top: 2.5vw; /* Push down to visually center with text */
   }
 }

@@ -88,10 +88,18 @@ const Hero = () => {
     };
 
     const heroData = [
-        { bg: "/RedBull-Instagram-Post-45.png",          smallImg: "/RedBull-Instagram-Post-45.png" },
-        { bg: "/pokkey.jpg",                              smallImg: "/pokkey.jpg" },
-        { bg: "/Emirates-airpline-in-flight.avif",        smallImg: "/Emirates-airpline-in-flight.avif" },
-        { bg: "/Screenshot-2025-07-01-at-21.36.35.png",  smallImg: "/Screenshot-2025-07-01-at-21.36.35.png" }
+        { 
+            bg: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-07-01-at-21.36.35.png?w=1198&h=1126&q=100&auto=format&fit=crop&dm=1751402284&s=4ad46c03819812b327e9b4643c1b0e6c", 
+            smallImg: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-07-01-at-21.36.35.png?w=1198&h=1126&q=100&auto=format&fit=crop&dm=1751402284&s=4ad46c03819812b327e9b4643c1b0e6c" 
+        },
+        { 
+            bg: "https://rise-atseven.transforms.svdcdn.com/production/images/unnamed-6.png?w=213&h=278&q=100&auto=format&fit=crop&dm=1750948726&s=0ecee9869674cd309d3170dfd7b29674", 
+            smallImg: "https://rise-atseven.transforms.svdcdn.com/production/images/unnamed-6.png?w=213&h=278&q=100&auto=format&fit=crop&dm=1750948726&s=0ecee9869674cd309d3170dfd7b29674" 
+        },
+        { 
+            bg: "https://rise-atseven.transforms.svdcdn.com/production/images/spaseekers.png?w=654&h=654&q=100&auto=format&fit=crop&dm=1750847719&s=7878b323cf448fba3f57e5ecbcef8ed1", 
+            smallImg: "https://rise-atseven.transforms.svdcdn.com/production/images/spaseekers.png?w=654&h=654&q=100&auto=format&fit=crop&dm=1750847719&s=7878b323cf448fba3f57e5ecbcef8ed1" 
+        }
     ];
 
     const [activeHero, setActiveHero] = useState(heroData[0]);
@@ -248,33 +256,51 @@ const Hero = () => {
                 <div className={`hero-content ${activeMenu ? 'hero-content--hidden' : ''}`}>
                     <div className="hero-content__top">
                         <p className="hero-content__tagline">
-                            #1 Most Recommended <br /> Content Marketing Agency
+                            #1 MOST RECOMMENDED <br /> CONTENT MARKETING AGENCY
                         </p>
                         <div className="hero-content__awards">
-                            <img src="/global-search-awards.png" className="hero-content__award-img" alt="Award 1" />
-                            <img src="/public/Mask-group.png"   className="hero-content__award-img" alt="Award 2" />
-                            <img src="/UKSocial-Media-Awards-White.png" className="hero-content__award-img" alt="Award 3" />
-                            <img src="/UK-Content-Awards-White.png"     className="hero-content__award-img" alt="Award 4" />
+                            <span className="hero-content__laurel hero-content__laurel--left"></span>
+                            <img src="/images/6/01.png" className="hero-content__award-img" alt="Global Search Awards" />
+                            <img src="/images/6/02.png" className="hero-content__award-img" alt="The Drum" />
+                            <img src="/images/6/03.webp" className="hero-content__award-img" alt="UK Social Media Awards" />
+                            <img src="/images/6/04.png" className="hero-content__award-img" alt="Content Awards" />
+                            <span className="hero-content__laurel hero-content__laurel--right"></span>
                         </div>
                     </div>
 
                     <h1 className="hero-content__heading">
-                        We Create<br className="hero-content__br--mobile" /><br className="hero-content__br--desktop" />Category
-                        <span className="hero-content__inline-img">
-                            <img src={activeHero.smallImg} className="hero-content__brand-img" alt="Brand" />
+                        <span className="hero-content__heading-line">We Create</span>
+                        <span className="hero-content__heading-line">
+                            Category
+                            <span className="hero-content__inline-img">
+                                <img src={activeHero.smallImg} className="hero-content__brand-img" alt="Brand" />
+                            </span>
+                            Leaders
                         </span>
-                        Leaders
                     </h1>
                     <p className="hero-content__subheading">on every searchable platform</p>
+
+                    {/* Platform Logos */}
+                    <div className="hero-content__platforms">
+                        <img src="/images/platfrom/google.png" className="hero-content__platform-img" alt="Google" />
+                        <img src="/images/platfrom/chatgpt.webp" className="hero-content__platform-img" alt="ChatGPT" />
+                        <img src="/images/platfrom/gemini.jpeg" className="hero-content__platform-img" alt="Gemini" />
+                        <img src="/images/platfrom/tiktok.png" className="hero-content__platform-img" alt="TikTok" />
+                        <img src="/images/platfrom/youtube.png" className="hero-content__platform-img" alt="YouTube" />
+                        <img src="/images/platfrom/pinterest.png" className="hero-content__platform-img" alt="Pinterest" />
+                        <img src="/images/platfrom/giphy.png" className="hero-content__platform-img" alt="GIPHY" />
+                        <img src="/images/platfrom/radit.png" className="hero-content__platform-img" alt="reddit" />
+                        <img src="/images/platfrom/amazon.png" className="hero-content__platform-img" alt="amazon" />
+                    </div>
                 </div>
 
                 {/* Footer */}
                 <div className={`hero-footer ${activeMenu ? 'hero-footer--hidden' : ''}`}>
                     <div className="hero-footer__left">
-                        Organic media planners creating, distributing & optimising <br />search-first content for SEO, Social, PR, Ai and LLM search
+                        Organic media planners creating, distributing & optimising search-first content for SEO, Social, PR, Ai and LLM search
                     </div>
                     <div className="hero-footer__right">
-                        4 Global Offices serving <br /> UK, USA (New York) & EU
+                        4 Global Offices serving UK, USA (New York) & EU
                     </div>
                 </div>
 

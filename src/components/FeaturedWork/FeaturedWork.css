@@ -1,12 +1,12 @@
 .featured-work {
   width: 100%;
   max-width: 1700px;
-  height: 95vh;
+  height: 90vh;
   margin: 0 auto 120px auto;
-  border-radius: 40px;
+  border-radius: 24px;
   background-color: #111212;
   color: #ffffff;
-  padding: 80px 24px;
+  padding: 40px 24px;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-y: auto;
   overflow-x: hidden;
@@ -18,8 +18,10 @@
 @media (min-width: 1024px) {
   .featured-work {
     width: calc(100% - 40px);
-    padding: 80px 64px;
+    height: 100vh;
+    padding: 60px 64px;
     margin-bottom: 160px;
+    border-radius: 32px;
   }
 }
 
@@ -28,13 +30,17 @@
 }
 
 .fw-container {
-  max-width: 1700px;
-  margin: 0 auto;
-  padding: 0 60px;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Balanced 1:1 ratio */
-  gap: 80px;
+  grid-template-columns: 1fr;
   align-items: start;
+  gap: 40px;
+}
+
+@media (min-width: 1024px) {
+  .fw-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
 }
 
 .fw-sidebar {
@@ -46,18 +52,24 @@
 .fw-sidebar-inner {
   position: sticky;
   top: 0;
-  height: 95vh; /* Stick to the top of the container and take up its full height */
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 40px;
 }
 
+@media (min-width: 1024px) {
+  .fw-sidebar-inner {
+    height: 100vh;
+  }
+}
+
 .fw-sidebar-title {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
-  opacity: 0.6;
+  opacity: 0.8;
   margin: 0;
 }
 
@@ -93,30 +105,47 @@
 .fw-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Reduced gap as requested */
-  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  gap: 20px;
   will-change: transform;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .fw-nav-list {
+    gap: 24px;
+  }
 }
 
 .fw-nav-item {
+  display: flex;
+  align-items: center;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fw-nav-item:hover {
+  opacity: 0.6;
+}
+
+.fw-nav-item.is-active {
+  opacity: 1;
 }
 
 .fw-nav-content {
   display: flex;
   align-items: baseline;
-  gap: 20px;
+  gap: 16px;
 }
 
 .fw-nav-text {
-  font-size: clamp(32px, 5vw, 80px); /* Reduced font size as requested */
-  font-weight: 600;
+  font-size: clamp(40px, 6vw, 100px);
+  font-weight: 500;
   line-height: 0.9;
-  margin-top: 30px;
-  color: rgba(255, 255, 255, 0.4); /* Increased opacity to make inactive text more visible */
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  white-space: normal; /* Allow <br /> to work */
+  letter-spacing: -0.04em;
+  color: #fff;
+  transition: opacity 0.5s ease;
 }
 
 .fw-nav-year {

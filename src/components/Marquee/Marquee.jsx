@@ -63,6 +63,15 @@ export default function Marquee() {
       <a href="/brief" className="marquee-title-wrap">
         <h2 className="marquee-title">Not Algorithms</h2>
       </a>
+      <div className="marquee-img-wrap">
+        <div className="marquee-img-inner">
+          <img 
+            src="https://rise-atseven.transforms.svdcdn.com/production/images/IMG_5023.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750846538&s=aaebcfe9d0be7775d9036eea4ea51c0f" 
+            alt="Marquee Image 2" 
+            className="marquee-img" 
+          />
+        </div>
+      </div>
     </div>
   )
 

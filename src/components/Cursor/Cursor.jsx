@@ -4,14 +4,9 @@ import './Cursor.css'
 export default function Cursor() {
   const cursorRef = useRef(null)
   const [visible, setVisible] = useState(false)
-  const [icon, setIcon] = useState('fa-arrow-up-right')
-  const posRef = useRef({ x: 0, y: 0 })
 
   const handler = useCallback((e) => {
     setVisible(e.detail.active)
-    if (e.detail.icon) {
-      setIcon(e.detail.icon)
-    }
   }, [])
 
   useEffect(() => {
@@ -21,7 +16,6 @@ export default function Cursor() {
 
   useEffect(() => {
     const move = (e) => {
-      posRef.current = { x: e.clientX, y: e.clientY }
       if (cursorRef.current) {
         cursorRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
       }
@@ -36,7 +30,20 @@ export default function Cursor() {
       className={`cursor-follow ${visible ? 'cursor-visible' : ''}`}
       aria-hidden="true"
     >
-      <i className={`fa-solid ${icon || 'fa-arrow-up-right'}`}></i>
+      {/* SVG Arrow — no external font needed */}
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#111212"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <line x1="7" y1="17" x2="17" y2="7" />
+        <polyline points="7 7 17 7 17 17" />
+      </svg>
     </div>
   )
 }

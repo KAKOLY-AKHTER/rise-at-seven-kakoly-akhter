@@ -282,25 +282,26 @@ const Hero = () => {
 
                     {/* Platform Logos */}
                     <div className="hero-content__platforms">
-                        <img src="/images/platfrom/google.png" className="hero-content__platform-img" alt="Google" />
-                        <img src="/images/platfrom/chatgpt.webp" className="hero-content__platform-img" alt="ChatGPT" />
-                        <img src="/images/platfrom/gemini.jpeg" className="hero-content__platform-img" alt="Gemini" />
-                        <img src="/images/platfrom/tiktok.png" className="hero-content__platform-img" alt="TikTok" />
-                        <img src="/images/platfrom/youtube.png" className="hero-content__platform-img" alt="YouTube" />
-                        <img src="/images/platfrom/pinterest.png" className="hero-content__platform-img" alt="Pinterest" />
-                        <img src="/images/platfrom/giphy.png" className="hero-content__platform-img" alt="GIPHY" />
+                        <img src="/images/platfrom/chatgpt.png" className="hero-content__platform-img" alt="ChatGPT" />
+                        <img src="/images/platfrom/gimini.png" className="hero-content__platform-img" alt="Gemini" />
+                        <img src="/images/platfrom/tiktok-removebg-preview.png" className="hero-content__platform-img" alt="TikTok" />
+                        <img src="/images/platfrom/youtube-removebg-preview.png" className="hero-content__platform-img" alt="YouTube" />
+                        <img src="/images/platfrom/pinterest-removebg-preview.png" className="hero-content__platform-img" alt="Pinterest" />
+                        <img src="/images/platfrom/giphy-removebg-preview.png" className="hero-content__platform-img" alt="GIPHY" />
                         <img src="/images/platfrom/radit.png" className="hero-content__platform-img" alt="reddit" />
-                        <img src="/images/platfrom/amazon.png" className="hero-content__platform-img" alt="amazon" />
+                        <img src="/images/platfrom/amajon.webp" className="hero-content__platform-img" alt="amazon" />
                     </div>
                 </div>
 
                 {/* Footer */}
                 <div className={`hero-footer ${activeMenu ? 'hero-footer--hidden' : ''}`}>
                     <div className="hero-footer__left">
-                        Organic media planners creating, distributing & optimising search-first content for SEO, Social, PR, Ai and LLM search
+                        Organic media planners creating, distributing & optimising <br />
+                        <strong>search-first</strong> content for SEO, Social, PR, Ai and LLM search
                     </div>
                     <div className="hero-footer__right">
-                        4 Global Offices serving UK, USA (New York) & EU
+                        4 Global Offices serving <br />
+                        UK, USA (New York) & EU
                     </div>
                 </div>
 

@@ -2,116 +2,72 @@
 
 .logo-marquee-section {
   width: 100%;
-  margin-top: 0;
-}
-
-@media (min-width: 1280px) {
-  .logo-marquee-section {
-    margin-top: 3rem;
-  }
+  background-color: #c1d7f2; /* Light blue from screenshot */
+  overflow: hidden;
 }
 
 .logo-marquee-container {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 100%;
-}
-
-/* Unified label */
-.logo-marquee-label {
-  display: block;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: rgba(0, 0, 0, 0.6);
-  white-space: nowrap;
-  padding-left: 24px;
-}
-
-@media (min-width: 768px) {
-  .logo-marquee-label {
-    font-size: 14px;
-    padding-left: 0;
-  }
 }
 
 .logo-marquee-row {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 0;
+  height: 80px; /* Base height */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .logo-marquee-row {
-    gap: 1.5rem;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    padding-left: 64px;
-    padding-right: 64px;
+    height: 100px;
+    padding-left: 40px;
   }
 }
 
-/* Outer overflow wrapper */
+.logo-marquee-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  padding-left: 24px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .logo-marquee-label {
+    padding-left: 0;
+    margin-right: 24px;
+  }
+}
+
 .logo-marquee-overflow {
   position: relative;
   flex: 1;
   overflow: hidden;
+  height: 100%;
 }
 
-/* Left edge fade */
-.logo-marquee-fade-left {
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 3.5rem;
-  z-index: 10;
-  backdrop-filter: blur(12px);
-  background: linear-gradient(to right, #f2f2f0, transparent);
-  -webkit-mask-image:
-    linear-gradient(to right, black 30%, transparent 95%),
-    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  mask-image:
-    linear-gradient(to right, black 30%, transparent 95%),
-    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
-
-@media (min-width: 768px) {
-  .logo-marquee-fade-left {
-    width: 14rem;
-  }
-}
-
-/* Right edge fade */
+/* Fades */
+.logo-marquee-fade-left,
 .logo-marquee-fade-right {
   pointer-events: none;
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
-  width: 3.5rem;
+  width: 4rem;
   z-index: 10;
-  backdrop-filter: blur(12px);
-  background: linear-gradient(to left, #f2f2f0, transparent);
-  -webkit-mask-image:
-    linear-gradient(to left, black 30%, transparent 95%),
-    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  mask-image:
-    linear-gradient(to left, black 30%, transparent 95%),
-    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
 }
 
-@media (min-width: 768px) {
-  .logo-marquee-fade-right {
-    width: 14rem;
-  }
+.logo-marquee-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #c1d7f2, transparent);
+}
+
+.logo-marquee-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #c1d7f2, transparent);
 }
 
 /* Scrolling track */
@@ -119,68 +75,46 @@
   display: flex;
   width: max-content;
   align-items: center;
-  animation: marquee 52s linear infinite;
+  height: 100%;
+  animation: marquee 40s linear infinite;
 }
 
-/* Individual logo item */
 .logo-marquee-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  height: 3rem;
-  opacity: 0.8;
+  width: 160px; /* Matches Swiper slide width roughly */
+  height: 100%;
   flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .logo-marquee-item {
-    padding-left: 100px;
-    padding-right: 100px;
-    height: 70px;
+    width: 240px;
   }
 }
 
-/* IMG logos */
+.logo-marquee-img-container {
+  position: relative;
+  width: 80px; /* w-20 */
+  aspect-ratio: 20/9;
+  padding: 20px 0; /* py-5 */
+}
+
+@media (min-width: 1024px) {
+  .logo-marquee-img-container {
+    width: 96px; /* lg:w-24 */
+  }
+}
+
 .logo-marquee-img {
-  height: 2.5rem;
-  width: auto;
-  max-width: 120px;
-  object-fit: contain;
-}
-
-@media (min-width: 768px) {
-  .logo-marquee-img {
-    height: 55px;
-    max-width: 160px;
-  }
-}
-
-/* SVG logos wrapper */
-.logo-marquee-svg-wrapper {
-  height: 1.75rem;
-  width: auto;
-  max-width: 100px;
-  display: flex;
-  align-items: center;
-}
-
-.logo-marquee-svg-wrapper svg {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: opacity 0.3s;
 }
 
-@media (min-width: 768px) {
-  .logo-marquee-svg-wrapper {
-    height: 38px;
-    max-width: 140px;
-  }
-}
-
-/* Keyframe animation */
 @keyframes marquee {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-33.33%); } /* Since we have 3 sets */
 }

@@ -288,7 +288,7 @@ const Hero = () => {
 
                     {/* Platform Logos */}
                     <div className="hero-content__platforms">
-                        <img src="https://rise-atseven.transforms.svdcdn.com/production/images/Placeholder-logos/gogle.png" className="hero-content__platform-img" alt="Google" />
+                        <img src="public/images/platfrom/google.png" className="hero-content__platform-img" alt="Google" />
                         <img src="/images/platfrom/chatgpt.png" className="hero-content__platform-img" alt="ChatGPT" />
                         <img src="/images/platfrom/gimini.png" className="hero-content__platform-img" alt="Gemini" />
                         <img src="/images/platfrom/tiktok-removebg-preview.png" className="hero-content__platform-img" alt="TikTok" />

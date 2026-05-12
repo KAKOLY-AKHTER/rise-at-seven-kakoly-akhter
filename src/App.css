@@ -9,6 +9,63 @@
   }
 }
 
+.explore-work-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+  background-color: transparent;
+}
+
+.explore-work-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #111212;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 16px 40px;
+  border-radius: 100px;
+  transition: border-radius 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.explore-work-btn-inner {
+  position: relative;
+  height: 1.2em;
+  overflow: hidden;
+}
+
+.explore-work-btn-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.explore-work-btn-label.dupe {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.explore-work-btn:hover .explore-work-btn-label:first-child {
+  transform: translateY(-100%);
+}
+
+.explore-work-btn:hover .explore-work-btn-label.dupe {
+  transform: translateY(-100%);
+}
+
+.explore-work-btn:hover {
+  border-radius: 16px;
+  background-color: #f0f0f0;
+}
+
 .site-section {
   margin-bottom: 120px;
 }

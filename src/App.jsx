@@ -25,6 +25,14 @@ function App() {
  
       <main className="main-content">
         <FeaturedWork />
+        <div className="explore-work-wrap">
+          <a href="/work/" className="explore-work-btn">
+            <div className="explore-work-btn-inner">
+              <span className="explore-work-btn-label">Explore Our Work ↗</span>
+              <span className="explore-work-btn-label dupe" aria-hidden="true">Explore Our Work ↗</span>
+            </div>
+          </a>
+        </div>
         <ServicesList />
              <Marquee />
         <LegacyCards />

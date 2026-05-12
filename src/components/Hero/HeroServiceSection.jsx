@@ -1,67 +1,81 @@
-import React from 'react';
-import './HeroServiceSection.css';
+import React from 'react'
+import './HeroServiceSection.css'
 
 const HeroServiceSection = () => {
-    return (
-        <section className="service-section">
-            <div className="service-section__inner site-container">
-                <div className="service-section__row">
+  return (
+    <section className="hs">
+      <div className="hs__inner">
 
-                    {/* Description Area (Left on Desktop) */}
-                    <div className="service-section__desc-col">
-                        <p className="service-section__description">
-                            A global team of search-first content marketers engineering
-                            semantic relevancy & category signals for both the internet and people.
-                        </p>
+        {/*
+          Original structure:
+          flex-col-reverse → md:flex-row
+          Left col: description (order 2 on mobile via col-reverse)
+          Right col: heading + desktop buttons (order 1 on mobile via col-reverse)
+          Mobile buttons: rendered first in DOM, floats to top via col-reverse
+        */}
+        <div className="hs__row">
 
-                        {/* Desktop Buttons */}
-                        <div className="service-section__btns service-section__btns--desktop">
-                            <button className="service-section__btn service-section__btn--outline">
-                                <div className="service-section__btn-inner">
-                                    <span className="service-section__btn-text">Our Story ↗</span>
-                                    <span className="service-section__btn-text service-section__btn-text--clone">Our Story ↗</span>
-                                </div>
-                            </button>
+          {/* Mobile-only buttons — col-reverse makes these appear at top on mobile */}
+          <div className="hs__btns-mobile">
+            <a href="/about/" className="hs__btn-mobile hs__btn-mobile--filled">
+              Our Story ↗
+            </a>
+            <a href="/services/" className="hs__btn-mobile hs__btn-mobile--ghost">
+              Our Services ↗
+            </a>
+          </div>
 
-                            <button className="service-section__btn service-section__btn--ghost">
-                                <div className="service-section__btn-inner">
-                                    <span className="service-section__btn-text">Our Services ↗</span>
-                                    <span className="service-section__btn-text service-section__btn-text--clone">Our Services ↗</span>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
+          {/* LEFT — description text */}
+          <div className="hs__left">
+            <p className="hs__desc">
+              A global team of search-first content marketers engineering
+              semantic relevancy &amp; category signals for both the internet and people
+            </p>
+          </div>
 
-                    {/* Heading Area (Right on Desktop) */}
-                    <div className="service-section__heading-col">
-                        <h2 className="service-section__heading">
-                            Driving Demand &{' '}
-                            <br className="service-section__br--desktop" />
-                            <span>Discovery</span>
-                            <span className="service-section__inline-img">
-                                <img
-                                    src="/images/legacy/pioneers.webp"
-                                    alt="Discovery Pioneers"
-                                    className="service-section__img"
-                                />
-                            </span>
-                        </h2>
+          {/* RIGHT — heading + desktop buttons */}
+          <div className="hs__right">
 
-                        {/* Mobile Buttons */}
-                        <div className="service-section__btns service-section__btns--mobile">
-                            <button className="service-section__btn service-section__btn--mobile-outline">
-                                Our Story ↗
-                            </button>
-                            <button className="service-section__btn service-section__btn--mobile-ghost">
-                                Our Services ↗
-                            </button>
-                        </div>
-                    </div>
+            <h2 className="hs__heading">
+              {/* Each "word" has margin-right: 12px in original via js-word */}
+              <div className="hs__heading-line">
+                <span style={{ marginRight: 12 }}>Driving</span>
+                <span style={{ marginRight: 12 }}>Demand</span>
+                <span style={{ marginRight: 12 }}>&amp;</span>
+                <span style={{ marginRight: 12 }}>Discovery</span>
+                {/* Inline image — original width: 81px at ~72px heading */}
+                <span className="hs__img-wrap">
+                  <img
+                    src="/images/services/heading.jpg"
+                    alt=""
+                    className="hs__inline-img"
+                  />
+                </span>
+              </div>
+            </h2>
 
-                </div>
+            {/* Desktop-only buttons */}
+            <div className="hs__btns">
+
+              <a href="/about/" className="hs__btn hs__btn--filled">
+                <span className="hs__btn-label">
+                  Our Story ↗
+                </span>
+              </a>
+
+              <a href="/services/" className="hs__btn hs__btn--ghost">
+                <span className="hs__btn-label">
+                  Our Services ↗
+                </span>
+              </a>
+
             </div>
-        </section>
-    );
-};
+          </div>
 
-export default HeroServiceSection;
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default HeroServiceSection

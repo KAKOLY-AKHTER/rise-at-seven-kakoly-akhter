@@ -137,7 +137,7 @@
     margin: 0 auto;
     width: calc(100% - 24px);
     max-width: 1700px;
-    height: 56px;
+    height: 48px; /* Thinner height */
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -153,11 +153,12 @@
 
 @media (min-width: 1024px) {
     .hero-header--scrolled {
-        top: 20px;
-        height: 64px;
+        top: 15px; /* Slightly closer to top */
+        height: 54px; /* Thinner for desktop */
         padding: 0 16px;
     }
 }
+
 
 /* Visibility States */
 .hero-header--hidden {
@@ -769,8 +770,8 @@
     display: none; /* Hide by default like reference */
     justify-content: center;
     align-items: center;
-    gap: 56px; /* gap-x-14 */
-    margin-top: 28px;
+    gap: 40px; /* Reduced gap slightly */
+    margin-top: 12px; /* Reduced from 28px */
     width: 100%;
     
 }

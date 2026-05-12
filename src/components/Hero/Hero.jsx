@@ -21,15 +21,34 @@ const Hero = () => {
 
 
     const [scrolled, setScrolled] = useState(false);
+    const [visible, setVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
-useEffect(() => {
-    const el = document.querySelector('.hero-container'); // বা window
-    const handleScroll = () => {
-        setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY <= 50) {
+                // At the top
+                setScrolled(false);
+                setVisible(true);
+            } else {
+                if (currentScrollY < lastScrollY) {
+                    // Scrolling UP
+                    setScrolled(true);
+                    setVisible(true);
+                } else {
+                    // Scrolling DOWN
+                    setVisible(false);
+                }
+            }
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
 
     const menuDetails = {
         // Folder 3 — Services+ (8 images)
@@ -140,8 +159,12 @@ useEffect(() => {
 
                 {/* Header / Nav */}
                 <header
-                    onMouseLeave={() => { setActiveMenu(null); setHoverRect(prev => ({ ...prev, opacity: 0 })); }}
-    className={`hero-header ${scrolled ? 'hero-header--scrolled' : ''}`}
+                   onMouseLeave={() => { 
+        setActiveMenu(null); 
+        setHoverRect(prev => ({ ...prev, opacity: 0 })); 
+    }}
+    className={`hero-header ${scrolled ? 'hero-header--scrolled' : ''} ${visible ? 'hero-header--visible' : 'hero-header--hidden'}`}
+
                 >
                     {/* Logo */}
                     <div className="hero-logo">

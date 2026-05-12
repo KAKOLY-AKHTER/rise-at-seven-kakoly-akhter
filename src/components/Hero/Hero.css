@@ -91,32 +91,105 @@
 }
 
 
-.hero-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: background 0.4s ease, backdrop-filter 0.4s ease, border-radius 0.4s ease, margin 0.4s ease, width 0.4s ease;
+/* Hero Container - overflow hidden সরিয়ে দাও অথবা শুধু background এর জন্য রাখো */
+.hero-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;           /* height এর পরিবর্তে min-height */
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    /* overflow: hidden;   ← এটা সরিয়ে দাও অথবা comment করো */
+    background: black;
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
-.hero-header--scrolled {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    margin: 8px auto;
-    width: calc(100% - 48px);
-    border-radius: 999px;
-    padding: 0 20px;
+/* Header - Default (at Top) */
+.hero-header {
+    position: absolute; /* Absolute at top to stay within container and below announcement bar */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 30px 10px; /* Minimal top padding for tight alignment */
+    margin: 0;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+    box-sizing: border-box;
+    border-radius: 0;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
+
+/* Scrolled state - Transforms into a Fixed Glassy Pill */
+.hero-header--scrolled {
+    position: fixed; /* Switch to fixed for the scroll-up effect */
+    top: 12px;
+    margin: 0 auto;
+    width: calc(100% - 24px);
+    max-width: 1700px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 9999px;
+    padding: 0 12px;
+    color: #000;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+
+@media (min-width: 1024px) {
+    .hero-header--scrolled {
+        top: 20px;
+        height: 64px;
+        padding: 0 16px;
+    }
+}
+
+/* Visibility States */
+.hero-header--hidden {
+    top: -100px !important;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hero-header--visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
 
 
 .hero-logo__svg {
-    width: 150px;
-    height: 60px; /* Reduced from 80px */
+    width: 120px;
+    height: 32px;
     object-fit: contain;
     fill: currentColor;
-    color: white;
+    color: inherit; /* Use parent's color */
 }
+
+@media (min-width: 1024px) {
+    .hero-logo__svg {
+        width: 140px;
+        height: 40px;
+    }
+}
+
+
 
 /* Desktop Nav */
 .hero-nav {
@@ -139,35 +212,53 @@
 
 .hero-nav__pill {
     position: absolute;
-    background: white;
+    background: rgba(255, 255, 255, 0.15); /* Subtle white hover for transparent header */
     border-radius: 9999px;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     pointer-events: none;
-    height: 32px;
+    height: 36px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 0;
 }
+
+.hero-header--scrolled .hero-nav__pill {
+    background: #efeeec; /* Grey hover for glassy header */
+}
+
+
 
 .hero-nav__item {
     cursor: pointer;
     z-index: 10;
-    transition: color 0.3s;
-     padding: 4px 8px;
+    transition: all 0.3s;
+    padding: 6px 14px;
     border-radius: 9999px;
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: inherit; /* White when top, Black when scrolled */
+    font-size: 14px;
+    white-space: nowrap;
 }
+
+.hero-header--scrolled .hero-nav__item {
+    color: #444;
+}
+
+
 
 .hero-nav__item:hover {
-    opacity: 0.8;
+    color: #fff;
 }
 
-.hero-nav__item--active {
-    color: black;
+.hero-header--scrolled .hero-nav__item:hover,
+.hero-header--scrolled .hero-nav__item--active {
+    color: #000;
 }
+
+
 
 .hero-nav__badge {
     background: #b2f6e3;
@@ -363,22 +454,30 @@
 
 .hero-actions__cta {
     display: none;
-    background: white;
-    color: black;
-    font-weight: 700;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
     align-items: center;
     justify-content: center;
-    height: 40px; /* Reduced from 45px */
-    width: 150px; /* Slightly narrower */
-    border-radius: 24px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 9999px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-header--scrolled .hero-actions__cta {
+    background: #000;
+    color: #fff;
 }
 
 .hero-actions__cta:hover {
-    border-radius: 12px;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+
 
 .hero-actions__cta:active {
     transform: scale(0.95);
@@ -451,12 +550,14 @@
     position: absolute;
     left: 50%;
     height: 2px;
-    width: 24px;
+    width: 20px;
     transform: translateX(-50%);
-    background: white;
+    background: currentColor; /* Matches header text color */
     will-change: transform;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+
 
 .hero-hamburger__bar--top {
     top: 9px;
@@ -486,7 +587,7 @@
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 40px 24px 20px; /* Added top padding instead of negative margin */
+    padding: 100px 24px 40px; /* Increased top padding to avoid nav overlap */
     flex: 1;
     margin-top: 0; 
     transition: all 0.5s;
@@ -497,7 +598,7 @@
         flex: none;
         height: auto;
         min-height: 60vh;
-        padding: 60px 40px 40px;
+        padding: 120px 40px 60px; /* Even more space for desktop */
         margin-top: 0;
     }
 }

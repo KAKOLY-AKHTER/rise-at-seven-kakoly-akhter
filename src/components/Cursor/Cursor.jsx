@@ -36,7 +36,7 @@ export default function Cursor() {
       className={`cursor-follow ${visible ? 'cursor-visible' : ''}`}
       aria-hidden="true"
     >
-      <i className={`fa-solid ${icon}`}></i>
+      <i className={`fa-solid ${icon || 'fa-arrow-up-right'}`}></i>
     </div>
   )
 }

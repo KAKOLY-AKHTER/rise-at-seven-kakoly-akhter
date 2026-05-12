@@ -527,11 +527,10 @@
 }
 
 .hero-content__award-logo {
-    width: 48px;
-    height: auto;
-    aspect-ratio: 20/9;
-    position: relative;
-    object-contain;
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
 }
 
 .hero-content__tagline {
@@ -600,11 +599,7 @@
     margin-top: 8px;
 }
 
-.hero-content__award-logo {
-    width: 52px;
-    height: auto;
-    object-fit: contain;
-}
+/* Logos styled above */
 .hero-content__inline-img-wrap {
     display: inline-flex;
     margin: 0 16px;
@@ -666,9 +661,9 @@
 }
 
 .hero-content__platform-img {
-    width: 74px; /* w-16 */
+    width: 64px; /* w-16 */
     height: auto;
-    aspect-ratio: 20/9;
+    aspect-ratio: 9/9;
     object-fit: contain;
     filter: brightness(0) invert(1);
     opacity: 1;

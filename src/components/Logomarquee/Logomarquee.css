@@ -2,7 +2,7 @@
 
 .logo-marquee-section {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 @media (min-width: 1280px) {
@@ -157,7 +157,7 @@
 
 @media (min-width: 768px) {
   .logo-marquee-img {
-    height: 55px;
+    height: 30px;
     max-width: 160px;
   }
 }

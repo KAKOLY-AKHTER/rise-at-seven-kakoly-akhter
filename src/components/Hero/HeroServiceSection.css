@@ -2,17 +2,17 @@
 
 .hs {
   width: 100%;
-  padding: 80px 16px;
+  padding: 48px 16px 24px 16px;
   box-sizing: border-box;
   font-family: 'saans', system-ui, sans-serif;
 }
 
 @media (min-width: 768px) {
-  .hs { padding: 100px 28px; }
+  .hs { padding: 60px 28px 30px 28px; }
 }
 
 @media (min-width: 1280px) {
-  .hs { padding: 120px 28px; }
+  .hs { padding: 96px 28px 48px 28px; }
 }
 
 /* ── Inner wrapper ─────────────────────────────────────────── */
@@ -20,125 +20,105 @@
   width: 100%;
 }
 
-/* ── Row: flex-col-reverse mobile → flex-row desktop ───────── */
+/* ── Row ───────────────────────────────────────────────────── */
 .hs__row {
   width: 100%;
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;          /* gap-x-3 = 12px */
+  gap: 12px;
 }
 
 @media (min-width: 768px) {
   .hs__row {
     flex-direction: row;
-    gap: 20px;          /* md:gap-x-5 = 20px */
+    gap: 20px;
   }
 }
 
-/* ── LEFT col — description ────────────────────────────────── */
-/* original: w-full mb-1 | md:mt-2 md:mb-0 max-w-sm | xl:max-w-xl | 3xl:max-w-2xl */
+/* ── LEFT col ──────────────────────────────────────────────── */
 .hs__left {
   width: 100%;
-  margin-bottom: 2px;  /* mb-1 */
+  margin-bottom: 4px;
 }
 
 @media (min-width: 768px) {
   .hs__left {
-    margin-top: 8px;     /* md:mt-2 */
+    margin-top: 8px;
     margin-bottom: 0;
-    max-width: 24rem;    /* max-w-sm = 384px */
+    max-width: 24rem;
     flex-shrink: 0;
   }
 }
 
 @media (min-width: 1280px) {
-  .hs__left {
-    max-width: 36rem;    /* xl:max-w-xl = 576px */
-  }
+  .hs__left { max-width: 36rem; }
 }
 
 @media (min-width: 1792px) {
-  .hs__left {
-    max-width: 42rem;    /* 3xl:max-w-2xl = 672px */
-  }
+  .hs__left { max-width: 42rem; }
 }
 
 .hs__desc {
   margin: 0;
-  /* text-lg/tight lg:text-lg/tight xl:text-2xl/none 4xl:text-3xl/none */
-  font-size: 1.125rem;   /* text-lg = 18px */
-  line-height: 1.25;     /* /tight */
+  font-size: 1.125rem;
+  line-height: 1.25;
   font-weight: 500;
-  letter-spacing: -0.025em;  /* tracking-tight */
+  letter-spacing: -0.025em;
   color: inherit;
 }
 
 @media (min-width: 1280px) {
   .hs__desc {
-    font-size: 1.5rem;   /* xl:text-2xl = 24px */
-    line-height: 1;      /* /none */
+    font-size: 1.5rem;
+    line-height: 1;
   }
 }
 
 @media (min-width: 2048px) {
-  .hs__desc {
-    font-size: 1.875rem; /* 4xl:text-3xl = 30px */
-  }
+  .hs__desc { font-size: 1.875rem; }
 }
 
-/* ── RIGHT col — heading + buttons ────────────────────────── */
-/* original: w-full grid | max-w-[24rem] md:max-w-[40rem] xl:max-w-xl
-             2xl:max-w-[42rem] 3xl:max-w-[52rem] 4xl:max-w-5xl | gap-y-3 md:gap-y-7 */
+/* ── RIGHT col ─────────────────────────────────────────────── */
 .hs__right {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;             /* gap-y-3 = 12px */
-  max-width: 24rem;      /* max-w-[24rem] = 384px */
+  gap: 12px;
+  max-width: 24rem;
 }
 
 @media (min-width: 768px) {
   .hs__right {
-    gap: 28px;           /* md:gap-y-7 = 28px */
-    max-width: 40rem;    /* md:max-w-[40rem] = 640px */
+    gap: 28px;
+    max-width: 40rem;
   }
 }
 
 @media (min-width: 1280px) {
-  .hs__right {
-    max-width: 36rem;    /* xl:max-w-xl = 576px */
-  }
+  .hs__right { max-width: 36rem; }
 }
 
 @media (min-width: 1536px) {
-  .hs__right {
-    max-width: 42rem;    /* 2xl:max-w-[42rem] = 672px */
-  }
+  .hs__right { max-width: 42rem; }
 }
 
 @media (min-width: 1792px) {
-  .hs__right {
-    max-width: 52rem;    /* 3xl:max-w-[52rem] = 832px */
-  }
+  .hs__right { max-width: 52rem; }
 }
 
 @media (min-width: 2048px) {
-  .hs__right {
-    max-width: 64rem;    /* 4xl:max-w-5xl = 1024px */
-  }
+  .hs__right { max-width: 64rem; }
 }
 
 /* ── Heading ───────────────────────────────────────────────── */
-/* text-5xl/none lg:text-6xl/none xl:text-7xl/0.9 3xl:text-7.5xl/0.9 4xl:text-8xl/0.9
-   font-medium tracking-tight */
 .hs__heading {
   margin: 0;
-  font-size: 3rem;        /* text-5xl = 48px */
-  line-height: 1;         /* /none */
+  font-size: 3rem;
+  line-height: 1;
   font-weight: 500;
-  letter-spacing: -0.025em; /* tracking-tight */
+  letter-spacing: -0.025em;
   color: inherit;
   display: flex;
   flex-direction: column;
@@ -147,52 +127,39 @@
 }
 
 @media (min-width: 1024px) {
-  .hs__heading {
-    font-size: 3.75rem;   /* text-6xl = 60px */
-    line-height: 1;
-  }
+  .hs__heading { font-size: 3.75rem; }
 }
 
 @media (min-width: 1280px) {
   .hs__heading {
-    font-size: 4.5rem;    /* text-7xl = 72px */
+    font-size: 4.5rem;
     line-height: 0.9;
   }
 }
 
 @media (min-width: 1792px) {
-  .hs__heading {
-    font-size: 5rem;      /* text-7.5xl ≈ 80px */
-    line-height: 0.9;
-  }
+  .hs__heading { font-size: 5rem; }
 }
 
 @media (min-width: 2048px) {
-  .hs__heading {
-    font-size: 6rem;      /* text-8xl = 96px */
-    line-height: 0.9;
-  }
+  .hs__heading { font-size: 6rem; }
 }
 
-/* Words wrap inline — original uses js-word spans with margin-right: 12px */
 .hs__heading-line {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-/* Inline image — original: shrink-0 flex bg-black/5 relative overflow-hidden
-   border-radius: 15%; width: 81px (at heading size)                          */
 .hs__img-wrap {
   display: inline-flex;
   flex-shrink: 0;
   overflow: hidden;
   border-radius: 15%;
-  /* width scales with em so it stays proportional to heading font size */
   width: 0.85em;
   height: 0.85em;
   position: relative;
-  margin-left: 12px;     /* js-word margin-right: 12px equivalent */
+  margin-left: 12px;
   background: rgba(0, 0, 0, 0.05);
 }
 
@@ -205,8 +172,7 @@
   object-position: center;
 }
 
-/* ── Buttons ───────────────────────────────────────────────── */
-/* flex flex-wrap gap-4 hidden md:flex */
+/* ── Desktop Buttons ───────────────────────────────────────── */
 .hs__btns {
   display: none;
 }
@@ -216,46 +182,38 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 16px;           /* gap-4 = 16px */
+    gap: 16px;
   }
 }
 
-/* Base: md:w-auto text-base px-6 py-3 rounded-3xl */
 .hs__btn {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  width: auto;
-  height: auto;
-  padding: 12px 24px;    /* py-3 px-6 */
-  border-radius: 9999px; /* rounded-3xl */
+  padding: 12px 24px;
+  border-radius: 9999px;
   border: none;
   cursor: pointer;
   text-decoration: none;
   font-family: inherit;
-  font-size: 1rem;       /* text-base = 16px */
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: -0.01em;
-  line-height: 1.25;     /* leading-tight */
+  line-height: 1.25;
   transition: border-radius 0.3s cubic-bezier(0.23, 1, 0.32, 1),
               background 0.2s ease;
 }
 
-/* hover:rounded-xl = 12px */
-.hs__btn:hover {
-  border-radius: 12px;
-}
+.hs__btn:hover { border-radius: 12px; }
 
-/* Filled: bg-white text-grey-900 ring-grey-900/5 */
 .hs__btn--filled {
   background: #ffffff;
   color: #111212;
   box-shadow: 0 0 0 1px rgba(17, 18, 18, 0.05);
 }
 
-/* Ghost: bg-transparent text-grey-900 */
 .hs__btn--ghost {
   background: transparent;
   color: inherit;
@@ -263,7 +221,7 @@
 
 .hs__btn-inner {
   position: relative;
-  height: 1.25em;        /* matches line-height */
+  height: 1.25em;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -279,23 +237,16 @@
 
 .hs__btn-label--clone {
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   width: 100%;
+  transform: translateY(100%);
 }
 
-.hs__btn:hover .hs__btn-label:first-child,
-.hs__btn-mobile:hover .hs__btn-label:first-child {
-  transform: translateY(-100%);
-}
+.hs__btn:hover .hs__btn-label:first-child { transform: translateY(-100%); }
+.hs__btn:hover .hs__btn-label--clone      { transform: translateY(0%); }
 
-.hs__btn:hover .hs__btn-label--clone,
-.hs__btn-mobile:hover .hs__btn-label--clone {
-  transform: translateY(-100%);
-}
-
-/* ── Mobile buttons (shown above heading on mobile) ──────── */
-/* flex flex-wrap gap-4 w-full md:hidden — flex-col-reverse puts this on top */
+/* ── Mobile Buttons ────────────────────────────────────────── */
 .hs__btns-mobile {
   display: flex;
   flex-wrap: wrap;
@@ -304,9 +255,7 @@
 }
 
 @media (min-width: 768px) {
-  .hs__btns-mobile {
-    display: none;
-  }
+  .hs__btns-mobile { display: none; }
 }
 
 .hs__btn-mobile {
@@ -324,10 +273,6 @@
   font-weight: 500;
   letter-spacing: -0.01em;
   transition: border-radius 0.3s ease;
-}
-
-@media (min-width: 768px) {
-  .hs__btn-mobile { width: auto; }
 }
 
 .hs__btn-mobile:hover { border-radius: 12px; }

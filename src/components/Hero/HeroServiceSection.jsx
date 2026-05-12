@@ -35,7 +35,7 @@ const HeroServiceSection = () => {
           <div className="hs__left">
             <p className="hs__desc">
               A global team of search-first content marketers engineering
-              semantic relevancy &amp; category signals for both the internet and people
+              semantic relevancy &amp; category <br /> signals for both the internet and people
             </p>
           </div>
 
@@ -52,7 +52,7 @@ const HeroServiceSection = () => {
                 {/* Inline image — original width: 81px at ~72px heading */}
                 <span className="hs__img-wrap">
                   <img
-                    src="/images/services/heading.jpg"
+                    src="public/images/legacy/pioneers.webp"
                     alt=""
                     className="hs__inline-img"
                   />

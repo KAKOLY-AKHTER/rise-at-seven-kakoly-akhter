@@ -1,6 +1,8 @@
 .services-section {
   width: 100%;
-  padding: 0 16px;
+  max-width: 1700px;
+  margin: 0 auto 120px auto;
+  padding: 0 24px;
   background: #f4f3ef;
   font-family: 'saans', system-ui, sans-serif;
   box-sizing: border-box;
@@ -9,7 +11,8 @@
 
 @media (min-width: 768px) {
   .services-section {
-    padding: 0 28px;
+    padding: 0 64px;
+    margin-bottom: 160px;
   }
 }
 

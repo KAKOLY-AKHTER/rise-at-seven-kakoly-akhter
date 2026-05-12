@@ -13,17 +13,16 @@ import './App.css'
 import AnnouncementBar from './components/AnnouncementBar/AnnouncementBar'
 import LogoMarquee from './components/Logomarquee/Logomarquee'
 
+
 function App() {
   return (
     <>
-      <Cursor />
+      
  <AnnouncementBar></AnnouncementBar>
       <Hero />
       <LogoMarquee></LogoMarquee>
-        <Marquee />
-    
       <HeroServiceSection />
-          
+        <Marquee />
       <main className="main-content">
         <FeaturedWork />
         <ServicesList />
@@ -33,6 +32,7 @@ function App() {
       </main>
       <CTABanner />
       <Footer />
+      <Cursor />
     </>
   )
 }

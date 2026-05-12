@@ -1,5 +1,22 @@
 .main-content {
-  padding-top: 72px;
+  padding-top: 120px;
+  background-color: #efeeec;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 80px;
+  }
+}
+
+.site-section {
+  margin-bottom: 120px;
+}
+
+@media (max-width: 768px) {
+  .site-section {
+    margin-bottom: 80px;
+  }
 }
 .counter {
   font-size: 16px;

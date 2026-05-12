@@ -1,8 +1,17 @@
 .blog-section {
   width: 100%;
+  max-width: 1700px;
+  margin: 0 auto 120px auto;
   background: #f4f3ef;
   font-family: 'saans', system-ui, sans-serif;
-  padding: 0;
+  padding: 0 24px;
+}
+
+@media (min-width: 1024px) {
+  .blog-section {
+    padding: 0 64px;
+    margin-bottom: 160px;
+  }
 }
 
 .blog-outer-grid {

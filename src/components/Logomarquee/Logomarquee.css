@@ -1,55 +1,204 @@
-.marquee-track {
-  animation: logo-marquee 50s linear infinite;
+/* LogoMarquee.css */
+
+.logo-marquee-section {
+  width: 100%;
+  margin-top: 0;
 }
 
-.marquee-logo {
-  padding: 12px 18px;
-  height: auto;
-  min-width: 100px;
+@media (min-width: 1280px) {
+  .logo-marquee-section {
+    margin-top: 3rem;
+  }
 }
 
-.marquee-logo img,
-.marquee-logo svg {
-  height: 100%;
-  width: auto;
-  max-width: 90px;
-  max-height: 100%;
-  object-fit: contain;
-  filter: grayscale(60%);
-  transition: all 0.4s ease;
+@media (min-width: 768px) {
+  .logo-marquee-section {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
 }
 
-.marquee-logo:hover img,
-.marquee-logo:hover svg {
-  filter: grayscale(0%);
-  transform: scale(1.08);
+.logo-marquee-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.section-blur {
+@media (min-width: 768px) {
+  .logo-marquee-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Mobile label */
+.logo-marquee-label-mobile {
+  display: block;
+  margin-bottom: -10px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .logo-marquee-label-mobile {
+    display: none;
+  }
+}
+
+.logo-marquee-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+/* Desktop label */
+.logo-marquee-label-desktop {
+  display: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .logo-marquee-label-desktop {
+    display: block;
+  }
+}
+
+/* Outer overflow wrapper */
+.logo-marquee-overflow {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Left edge fade */
+.logo-marquee-fade-left {
+  pointer-events: none;
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.section-blur--left {
   left: 0;
-  background: linear-gradient(to right, #f8f8f6 0%, transparent 100%);
+  width: 3.5rem;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: linear-gradient(to right, #f2f2f0, transparent);
+  -webkit-mask-image:
+    linear-gradient(to right, black 30%, transparent 95%),
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  mask-image:
+    linear-gradient(to right, black 30%, transparent 95%),
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
-.section-blur--right {
+@media (min-width: 768px) {
+  .logo-marquee-fade-left {
+    width: 14rem;
+  }
+}
+
+/* Right edge fade */
+.logo-marquee-fade-right {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   right: 0;
-  background: linear-gradient(to left, #f8f8f6 0%, transparent 100%);
+  width: 3.5rem;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: linear-gradient(to left, #f2f2f0, transparent);
+  -webkit-mask-image:
+    linear-gradient(to left, black 30%, transparent 95%),
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  mask-image:
+    linear-gradient(to left, black 30%, transparent 95%),
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
-@media (max-width: 768px) {
-  .marquee-logo {
-    padding: 8px 12px;
-    min-width: 80px;
+@media (min-width: 768px) {
+  .logo-marquee-fade-right {
+    width: 14rem;
   }
-  .section-blur {
-    width: 40px;
+}
+
+/* Scrolling track */
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: marquee 52s linear infinite;
+}
+
+/* Individual logo item */
+.logo-marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  height: 3rem;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .logo-marquee-item {
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 70px;
   }
+}
+
+/* IMG logos */
+.logo-marquee-img {
+  height: 2.5rem;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .logo-marquee-img {
+    height: 55px;
+    max-width: 160px;
+  }
+}
+
+/* SVG logos wrapper */
+.logo-marquee-svg-wrapper {
+  height: 1.75rem;
+  width: auto;
+  max-width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-marquee-svg-wrapper svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .logo-marquee-svg-wrapper {
+    height: 38px;
+    max-width: 140px;
+  }
+}
+
+/* Keyframe animation */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

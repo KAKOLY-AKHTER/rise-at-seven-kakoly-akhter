@@ -4,10 +4,14 @@ import './Cursor.css'
 export default function Cursor() {
   const cursorRef = useRef(null)
   const [visible, setVisible] = useState(false)
+  const [icon, setIcon] = useState('fa-arrow-up-right')
   const posRef = useRef({ x: 0, y: 0 })
 
   const handler = useCallback((e) => {
     setVisible(e.detail.active)
+    if (e.detail.icon) {
+      setIcon(e.detail.icon)
+    }
   }, [])
 
   useEffect(() => {
@@ -32,7 +36,7 @@ export default function Cursor() {
       className={`cursor-follow ${visible ? 'cursor-visible' : ''}`}
       aria-hidden="true"
     >
-      ↗
+      <i className={`fa-solid ${icon}`}></i>
     </div>
   )
 }
